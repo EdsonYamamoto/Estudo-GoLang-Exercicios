@@ -1,0 +1,7 @@
+
+.boxed {
+    background-color: white;
+    width: 450px;
+    padding: 25px;
+    border: 10px solid #999999;
+}

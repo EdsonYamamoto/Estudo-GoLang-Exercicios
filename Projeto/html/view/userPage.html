@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="static/table/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/table/css/util.css">
+	<link rel="stylesheet" type="text/css" href="static/table/css/main.css">
+<!--===============================================================================================-->
+<style type="text/css">
+	.selected {
+    background-color: brown;
+    color: #FFF;
+
+</style>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">ID Hero:</th>
+								<th class="column2">Nome: </th>
+							</tr>
+						</thead>
+						{{range .}}
+						<tbody>
+								<tr onclick="IDPersonagem({{.HeroiID}}) ">
+									<td id="HeroiID">{{.HeroiID}}</td>
+									<td id="Nome">{{.Nome}}</td>
+								</tr>
+								<!--
+								<tr onclick="myFunction({{.HeroiID}})" name="HeroiID">
+									<td id="HeroiID">{{.HeroiID}}</td>
+									<td id="Nome">{{.Nome}}</td>
+								</tr>
+								-->
+						</tbody>
+        				{{end}}
+
+
+<!--
+        				<thead>
+							<tr class="table100-head">
+								<th class="column1">Personagem: </th>
+								<form method="POST" action="/loged/hero">
+									<th class="column2">
+										<p id="demo" name="IDHero"></p>
+									</th>
+									<th>
+										<button class="login100-form-btn" value="loginHero" >
+											LoginID
+										</button>
+									</th>
+								</form>
+							</tr>
+						</thead>
+					</table>
+        				-->
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Selecione o Personagem:</th>
+								<th class="column2"><p id="demo"></p></th>
+							</tr>
+						</thead>
+					</table>
+					
+					<form method="POST" action="/loged/hero">
+						<input type="number" name="IDHero"><p id="demo"></p>
+						<div class="container-login100-form-btn">
+							<button class="login100-form-btn" value="loginHero" >
+								LoginID
+							</button>
+						</div>
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript">
+		function NomePersonagem(x) {
+			var HeroiID = x;
+			document.getElementById("demo").innerHTML = HeroiID;
+		}
+		function IDPersonagem(x) {
+			var HeroiID = x;
+			document.getElementById("demo").innerHTML = HeroiID;
+		}
+	</script>
+	<script type="text/javascript">
+		/*
+		$("#table tr").click(function(){
+		   $(this).addClass('selected').siblings().removeClass('selected');    
+		   var value=$(this).find('td:first').html();
+		   alert(value);    
+		});
+
+		$('.ok').on('click', function(e){
+		    alert($("#table tr.selected td:first").html());
+		});
+		*/
+	</script>
+
+<!--===============================================================================================-->	
+	<script src="static/table/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/table/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/table/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/table/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/table/js/main.js"></script>
+
+</body>
+</html>

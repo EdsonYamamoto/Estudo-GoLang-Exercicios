@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/css/boxes.css">
+</head>
+<body>
+	<div class="boxed">
+    <h1>Bem Vindo</h1>
+		{{range .}}
+    {{.Username}}
+        <table>
+          <tr>
+          <td>ID Hero: </td><td id="HeroiID">{{.HeroiID}}</td>
+          </tr>
+          <tr>
+          <td>Nome Personagem: </td><td id="des">{{.Nome}}</td>
+          </tr>
+          <tr>
+          <td><button onclick="myFunction()">Escolher este</button></td>
+          </tr>
+        </table>
+        {{end}}
+        <button>New Hero</button>
+	<p id="demo"></p>
+	</div>
+
+	<script type="text/javascript">
+		function myFunction() {
+			var HeroiID = parseInt(document.getElementById("HeroiID").innerHTML);
+			document.getElementById("demo").innerHTML = HeroiID;
+		}
+
+	</script>
+</body>
+</html>
